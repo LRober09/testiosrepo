@@ -7,3 +7,31 @@
 //
 
 import Foundation
+
+struct School : Codable {
+    
+    var schools : [Schools]
+    
+    class Schools : Codable {
+        var name : String
+        var city : String?
+        var state : String?
+        var zip : String?
+        var contact_email: String?
+        var latitude : Double?
+        var longitude : Double?
+        
+        func toAnyObject() -> Any {
+            return [
+                "name" : name,
+                "city" : city,
+                "state" : state,
+                "zip" : zip,
+                "contact_email" : contact_email,
+                "latitude" : latitude,
+                "longitude" : longitude,
+            ]
+        }
+    }
+    
+}
